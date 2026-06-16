@@ -1,6 +1,6 @@
 # 🔐 StarPass v1.0
 
-StarkPass is a beginner-friendly password generator built with Python. It allows users to generate secure random passwords of custom lengths using uppercase letters, lowercase letters, numbers, and special characters.
+StarPass is a beginner-friendly password generator built with Python. It allows users to generate secure random passwords of custom lengths using uppercase letters, lowercase letters, numbers, and special characters.
 
 ## Features
 ✅ Custom password length
