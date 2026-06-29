@@ -56,6 +56,8 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Yuvraj-26-k/StarPass.git
+  or
+copy the raw code and the git clone.
 ```
 
 Move into the project folder:
