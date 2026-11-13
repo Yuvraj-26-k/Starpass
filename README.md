@@ -1,139 +1,40 @@
-# 🔐 StarPass v1.1
+# Starpass
 
-A simple Python-based password utility that allows users to generate secure passwords and check the strength of existing passwords.
+**A Python password-utility learning exercise, not a production password manager.**
 
----
+The CLI generates character strings or checks whether entered text meets
+simple composition rules: length, uppercase, lowercase, digit and symbol.
 
-## ✨ Features
+## Run the educational demo
 
-- 🔑 Random Password Generator
-- 🛡️ Password Strength Checker
-- ✔ Checks for:
-  - Minimum length (8+ characters)
-  - Uppercase letters
-  - Numbers
-  - Special characters
-- 🖥️ Easy-to-use command-line interface
+Python 3 and its standard library are sufficient.
 
----
-
-## 📸 Preview
-
-```
-==================================================
-                  STARPASS V1.1
-==================================================
-
-1. Password Generator
-2. Strength Checker
-
-Enter your choice:
+```sh
+git clone https://github.com/Yuvraj-26-k/Starpass.git
+cd Starpass
+python Starpassv1.1.py
 ```
 
----
+Choose `1` for generation and enter a positive sample length, or `2` to inspect
+a disposable example string. Do not type a real password: input is visible.
+The actual tracked filename is `Starpassv1.1.py`, including capitalization.
 
-## 🛠️ Technologies Used
+## Important implementation limits
 
-- Python 3
-- Random Module
+Generation uses Python's ordinary `random` module rather than `secrets`.
+**Do not rely on the current generator for real account credentials.** Length
+and menu inputs are not robustly validated, and composition checks are not an
+entropy estimate, breach check or guarantee of password strength. Generated
+strings need not contain every category checked by the separate checker.
 
----
+The historical screenshot is preserved in the repository but is not embedded
+here because it displays password-like input/output. This documentation does
+not reproduce those strings, remove the asset, or change Git history.
 
-## 📂 Project Structure
+## Next steps
 
-```
-StarPass/
-│
-├── starpass.py
-├── README.md
-```
-
----
-
-## 🚀 Installation
-
-Clone the repository:
-
-```bash
-git clone https://github.com/Yuvraj-26-k/StarPass.git
-  or
-copy the raw code and the git clone.
-```
-
-Move into the project folder:
-
-```bash
-cd StarPass
-```
-
-Run the program:
-
-```bash
-python3 starpass.py
-```
-
----
-
-## 🔑 Password Generator
-
-Generates a random password based on the length entered by the user.
-
-Example:
-
-```
-Enter password length: 12
-
-Generated Password:
-aD7#fL2@qP9!
-```
-
----
-
-## 🛡️ Password Strength Checker
-
-Checks whether a password contains:
-
-- Minimum 8 characters
-- Uppercase letter
-- Number
-- Special character
-
-Example:
-
-```
-Password: MyPass@123
-
-Result:
-Strong Password
-```
-
-If the password is weak, the program explains what is missing.
-
-Example:
-
-```
-Password must be at least 8 characters.
-Password must contain at least one uppercase letter.
-Password must contain at least one special character.
-```
-
----
-
-## 🎯 Future Improvements
-
-- Password History
-- Password Entropy Calculator
-- Save Passwords to File
-- Clipboard Support
-- Colorful Terminal Output
-- GUI Version (Tkinter / CustomTkinter)
-
----
-
-## 👨‍💻 Author
-
-**Yuvraj Singh**
-
-Cybersecurity | Python | Linux | Networking | Arduino
-
----
+Replace generation randomness with `secrets`, bound lengths, hide checker input,
+separate functions from terminal UI, and add deterministic behavior tests.
+There are currently no first-party tests. The wording in this guide describes
+the current implementation honestly; the documentation PR does not fix its code
+or consolidate this repository with another project.
